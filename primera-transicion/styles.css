@@ -84,6 +84,35 @@
   hay formas creativas de darle vida a tus elementos!
 */
 
+/* 
+  🎨 Controlando Animaciones en CSS
+  A menudo, la opción predeterminada es animar todas las propiedades con
+  transition: all;, lo cual puede causar problemas de rendimiento y resultados
+  no deseados.
+
+  🚀 Animando Solo lo Necesario
+  Por defecto, transition: all; animará todas las propiedades de un elemento.
+  Esto puede no ser lo más eficiente. Por ejemplo, si animas box-shadow,
+  podrías frenar el rendimiento porque las sombras son bastante caras de animar,
+  especialmente con muchas transiciones simultáneas. Aquí tienes un ejemplo
+  de cómo puedes seleccionar solo ciertas propiedades:
+
+  .elemento {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  En este ejemplo, solo el color de fondo y la transformación se animarán,
+  mientras que otras propiedades permanecen intactas.
+
+  ⚡ Cuidado con all
+  Aunque puede parecer conveniente usar transition: all;, debes ser consciente
+  de sus desventajas. Un uso excesivo puede llevar a:
+  1. Perdida de rendimiento.
+  2. Deslizamiento o comportamientos inesperados en elementos no deseados,
+  como fuentes o tamaños de texto.
+
+  Por eso, es ideal usar un enfoque más calculado y explícito.
+*/
+
 .pulser {
   position: relative;
   width: 50px;
@@ -91,6 +120,7 @@
   background: #09f;
   border-radius: 100%;
   transition-duration: 2s;
+  transition-property: background, scale;
 }
 
 .pulser:hover {
