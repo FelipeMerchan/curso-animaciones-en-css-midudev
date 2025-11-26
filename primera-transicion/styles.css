@@ -24,6 +24,37 @@
     - Estética Mejorada: Hacen que tus diseños se vean profesionales y bien cuidados.
 */
 
+/* 
+  La Trampa del Hover ⛔️
+  Cuando aplicamos transiciones, un aspecto crucial a considerar es dónde y
+  cómo las definimos. A menudo, el error radica en añadir la propiedad de
+  transición únicamente en el estado de hover, lo que puede resultar en
+  efectos inesperados. Por ejemplo:
+
+  Cuando haces hover, la transición se despliega correctamente.
+  Al salir del hover, debería revertir al estado inicial, pero si la
+  transición no está aplicada correctamente, ¡sorpresa! Un efecto abrupto
+  puede aparecer.
+
+  ¿Por qué ocurre esto? 🤔
+  Generalmente, es necesario establecer la transición en el estado inicial
+  del elemento. Si haces lo contrario, podrías encontrarte con efectos poco
+  elegantes y un comportamiento errático:
+  .elemento {
+    transition: all 0.5s ease;
+  }
+  
+  .elemento:hover {
+    ...
+  }
+
+  Mejores Prácticas 👍
+  Para evitar estos problemas, recuerda:
+  1. Siempre colocar las transiciones en el estado inicial del elemento.
+  2. Aplica transiciones de manera controlada y consistente en todos los
+  estados que desees animar.
+*/
+
 .pulser {
   position: relative;
   width: 50px;
