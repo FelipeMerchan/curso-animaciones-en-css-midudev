@@ -158,21 +158,73 @@
   - Visualiza: Usa herramientas de desarrollo para experimentar con las curvas de Bézier sin necesidad de recordar los valores.
 */
 
-.pulser {
+/* 
+  🎨 Control de Tiempos en Transiciones
+  Por defecto, las transiciones en CSS comienzan de inmediato con un delay de 0
+  segundos. Sin embargo, puedes especificar cuánto tiempo deseas que se
+  retrase el inicio de la animación. Aquí tienes un ejemplo simple:
+
+  .element {
+    transition: opacity 2s ease-in-out 0.3s; <- Aparece con un delay de 0.3 segundos
+  }
+*/
+
+.pulser,
+.pulser-2 {
   position: relative;
-  width: 50px;
-  height: 50px;
   background: #09f;
   border-radius: 100%;
   transition-duration: 2s;
-  transition-property: background, scale;
   transition-timing-function: cubic-bezier(0.67, 0.01, 0.39, 0.82);
+}
+
+.pulser {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 50px;
+  transition-property: background, scale;
 }
 
 .pulser:hover {
   scale: 2;
   background-color: purple;
   box-shadow: 0 0 10px purple;
+}
+
+.pulser-2 {
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  transition-delay: 200ms;
+}
+
+.pulser-2:first-child {
+  transition-delay: 0s;
+}
+
+.pulser-2:nth-child(2) {
+  transition-delay: 300ms;
+}
+
+.pulser-2:nth-child(3) {
+  transition-delay: 600ms;
+}
+
+.pulser:hover {
+  scale: 2;
+  background-color: purple;
+  box-shadow: 0 0 10px purple;
+}
+
+section {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+section:hover .pulser-2 {
+  opacity: 1;
 }
 
 body {
