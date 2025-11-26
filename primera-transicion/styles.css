@@ -113,6 +113,51 @@
   Por eso, es ideal usar un enfoque más calculado y explícito.
 */
 
+/* 
+  🎨 Efectos de Transiciones con Timing Functions
+  🌟 Introducción a las Transiciones
+  Las transiciones permiten que los cambios en propiedades CSS ocurran de
+  manera suave en lugar de instantánea. Por defecto, las transiciones son
+  lineales, lo que significa que cambian a una velocidad constante.
+
+  .elemento {
+    transition: background-color 2s linear;
+  }
+
+  🚀 Funciones de Temporización
+  Las funciones de temporización (timing functions) son clave para crear
+  efectos más naturales. Existen varias opciones además de la función linear,
+  como:
+
+  ease-in: Comienza lentamente y acelera.
+  ease-out: Comienza rápidamente y desacelera al final.
+  ease-in-out: Comienza y termina lentamente, con velocidad máxima en el medio.
+  steps(): Permite crear animaciones más abruptas dividiendo la transición en pasos.
+
+  La función steps() es muy útil para crear efectos de animación en saltos. Aquí
+  tienes un ejemplo donde se realiza una transición en 10 pasos.
+
+  .elemento {
+    transition: transform 2s steps(10);
+  }
+  Al aplicar esta propiedad, el elemento efectuará la animación en 10 pasos,
+  lo que crea un efecto “ortopédico”, casi como un videojuego retro.
+
+  🛠️ Herramientas para Curvas de Bézier
+  Una de las herramientas más poderosas que puedes utilizar es la curva de
+  Bézier cúbica. Aunque puede parecer complicada, hay herramientas en los
+  navegadores que facilitan su uso. Puedes ajustar las curvas visualmente y
+  ver cómo afectan tus animaciones:
+
+  - Haz clic en el icono en las herramientas de desarrollo.
+  - Prueba diferentes curvas para ver los efectos en tiempo real.
+
+  💡 Trucos y Consejos
+  - Combina funciones: No dudes en usar combinaciones de ease-in, ease-out y steps() para lograr efectos únicos.
+  - Experimenta: Ajusta los parámetros y observa cómo cambia la animación.
+  - Visualiza: Usa herramientas de desarrollo para experimentar con las curvas de Bézier sin necesidad de recordar los valores.
+*/
+
 .pulser {
   position: relative;
   width: 50px;
@@ -121,6 +166,7 @@
   border-radius: 100%;
   transition-duration: 2s;
   transition-property: background, scale;
+  transition-timing-function: cubic-bezier(0.67, 0.01, 0.39, 0.82);
 }
 
 .pulser:hover {
