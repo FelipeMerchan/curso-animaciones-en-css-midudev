@@ -55,6 +55,35 @@
   estados que desees animar.
 */
 
+/* 
+  🎨 Animaciones en Diferentes Estados
+  🌟 ¿Qué son los Estados?
+  Un elemento puede tener varios estados que impactan su apariencia y
+  comportamiento. Algunos de los estados más comunes incluyen:
+  - hover: Cuando el cursor está sobre el elemento.
+  - focus: Cuando el elemento recibe el enfoque, por ejemplo, un campo de entrada.
+  - active: Cuando se hace clic en el elemento.
+  - target: Aplicable a elementos que se activan al hacer clic en un enlace.
+
+  🎛️ Cambiar Estados con JavaScript
+  Además de las interacciones del usuario, el cambio de clases mediante
+  JavaScript también puede modificar el estado de un elemento. Por ejemplo,
+  al agregar o eliminar una clase, puedes animar desde un estado inicial a un
+  estado final.
+
+  const button = document.querySelector('.my-button');
+ 
+  button.addEventListener('click', () => {
+    button.classList.toggle('active');
+  });
+
+  🛠️ Cuáles Elementos se Pueden Animar
+  La buena noticia es que todos los elementos HTML son animables en cierta
+  medida. Aun así, hay algunas restricciones. Por ejemplo, aunque puedes mover
+  un <select>, no puedes animar sus estilos internos. Sin embargo, ¡siempre
+  hay formas creativas de darle vida a tus elementos!
+*/
+
 .pulser {
   position: relative;
   width: 50px;
