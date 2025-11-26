@@ -1,0 +1,46 @@
+/* 
+   ¿Qué Son las Transiciones?
+   Las transiciones son cambios en las propiedades CSS de un elemento que
+   ocurren cuando se inicia un evento, como hover o focus. Por ejemplo, puedes
+   hacer que un botón cambie de tamaño o color cuando el usuario pasa el
+   cursor sobre él.
+
+    Conceptos Clave
+    1. Estados de un Elemento:
+      - Estado Inicial: El aspecto original del elemento.
+      - Estado Final: El aspecto del elemento después de un evento
+      (por ejemplo, al pasar el cursor).
+    2. Propiedades de Transición:
+      - transition: Define cómo y cuándo se aplican los cambios entre estados.
+      - Duración: Puedes especificar la duración de la transición en segundos o milisegundos.
+
+    Mejora la Experiencia del Usuario
+    Las transiciones no solo son para hacerlo más bonito; también guían al
+    usuario en su interacción. Mejoran la comprensión del flujo visual y
+    hacen que el uso de tu aplicación sea más placentero.
+
+    ¿Por Qué Usar Transiciones?
+    - Orientación Visual: Ayudan al usuario a entender cómo se relacionan diferentes elementos.
+    - Estética Mejorada: Hacen que tus diseños se vean profesionales y bien cuidados.
+*/
+
+.pulser {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: #09f;
+  border-radius: 100%;
+  transition-duration: 2s;
+}
+
+.pulser:hover {
+  scale: 2;
+  background-color: purple;
+  box-shadow: 0 0 10px purple;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 50vh;
+}
