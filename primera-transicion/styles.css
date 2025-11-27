@@ -190,6 +190,52 @@
   - Facilidad de Mantenimiento: Es más sencillo actualizar y entender el código.
 */
 
+/* 
+  Propiedades Animables y Trucos Avanzados
+  📜 Lista de Propiedades Animables
+  Primero, es crucial saber que no todas las propiedades son animables.
+  Aquí te compartimos algunos conceptos básicos:
+  - Animables: Propiedades que tienen un estado intermedio, como el
+  color, dimensiones (px, %), y transformaciones.
+  - No animables: Propiedades como el tipo de fuente o cambios de imágenes de
+  fondo, donde no existe un estado intermedio.
+
+  ¿Cómo determinar si es animable?
+  Piensa en las propiedades de esta manera:
+  - Puede tener un estado intermedio: Como un color que va de azul a rojo.
+  - No puede tener un estado intermedio: Cambiar de una fuente Serif a Sans
+  Serif, no tiene un medio.
+
+  ⏳ Duraciones de Animación
+  Es posible que desees ajustar la duración de la animación durante el hover.
+  Esta es una técnica que agrega dinamismo:
+  .element {
+    transition: all 0.3s ease;
+  }
+ 
+  .element:hover {
+    transition: all 1s ease; <- Lenta al hacer hover
+  }
+  Concepto de Inversión
+  La idea es que cuando un usuario interactúa con el elemento, puede querer
+  que la animación sea más lenta para captar la atención y más rápida al dejar
+  el elemento.
+
+  🌍 Accesibilidad en Animaciones
+  No olvides que algunas personas pueden experimentar mareos o dificultades
+  con animaciones complejas. Para mejorar la accesibilidad:
+  1. Utiliza una media query para desactivar animaciones para usuarios que
+  prefieren movimientos reducidos:
+  @media (prefers-reduced-motion: reduce) {
+    .element {
+      transition: none; <- Desactiva animaciones
+    }
+  }
+
+  2. Considera hacer tus animaciones más discretas en lugar de eliminarlas
+  por completo. Esto ayuda a una mayor inclusión.
+*/
+
 .pulser,
 .pulser-2 {
   position: relative;
