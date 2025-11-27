@@ -169,6 +169,27 @@
   }
 */
 
+/* 
+  🎨 Atajo para Transiciones en CSS
+  La propiedad transition puede configurarse de diferentes maneras, pero lo más
+  común es definir:
+  1. Propiedad (ej. background, scale, etc.)
+  2. Duración (ej. 300ms, 1s)
+  3. Función de temporización (ej. ease, linear, ease-in-out)
+  4. Retraso (opcional, ej. 200ms)
+
+  Ejemplo de Uso:
+  .element {
+    transition: background 300ms linear 200ms, scale 500ms ease-in-out;
+  }
+
+  🌟 Ventajas del Uso de Atajos
+  - Menos Código: Reduce la cantidad de líneas que necesitas escribir.
+  - Flexibilidad: Permite asignar diferentes duraciones y funciones de animación
+  a distintas propiedades de un mismo elemento.
+  - Facilidad de Mantenimiento: Es más sencillo actualizar y entender el código.
+*/
+
 .pulser,
 .pulser-2 {
   position: relative;
