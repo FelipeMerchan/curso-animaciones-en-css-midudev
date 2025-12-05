@@ -1,0 +1,54 @@
+/* 
+  🔑 ¿Qué son los Keyframes?
+  Los keyframes son la base de cualquier animación CSS. Son esenciales para
+  definir los estados inicial y final de la animación.
+
+  🚀 Creando una Animación
+  Para aplicar la animación, necesitas definir el nombre de la animación y
+  su duración:
+
+  @keyframes move {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100px);
+    }
+  }
+
+  .elemento {
+    animation: move 3s;
+  }
+
+  ⏳ Duración de la Animación
+  Es importante especificar la duración de la animación correctamente.
+  Sin ella, la animación no se ejecutará como deseas.
+
+
+*/
+
+.pulser {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: #09f;
+  border-radius: 100%;
+  animation: move;
+  animation-duration: 3s;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(100px);
+  }
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 50vh;
+}
