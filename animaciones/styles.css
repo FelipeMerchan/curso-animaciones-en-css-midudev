@@ -37,6 +37,11 @@
   elemento se ve afectado inmediatamente antes de la animación.
   both: Combina ambos comportamientos, mostrando el keyframe inicial al
   comenzar y el keyframe final al finalizar.
+
+
+  ⚙️ Consideraciones de Rendimiento
+  Las animaciones CSS son eficientes porque se ejecutan en GPU, lo que reduce el
+  impacto en el rendimiento en comparación con las animaciones basadas en JavaScript.
 */
 
 .pulser {
@@ -97,12 +102,19 @@ body {
 
 img {
   width: 80px;
-  animation: mover;
+  animation-name: mover;
   animation-duration: 2s;
   /* animation-iteration-count: infinite; */
   animation-timing-function: linear;
   animation-direction: alternate;
   animation-fill-mode: both;
+
+  /*
+    La propiedad animation permite definir animaciones de manera compacta.
+    Puedes combinar varias animaciones utilizando comas para especificar
+    diferentes efectos:
+  */
+  animation: mover 2s steps(10) both, agrandar 1s linear 2s both;
 }
 
 img {
@@ -111,6 +123,28 @@ img {
     opacity: 0.7;
     filter: contraste(150%);
     cursor: progress;
+  }
+}
+
+@keyframes agrandar {
+  0% {
+    scale: 1;
+  }
+
+  25% {
+    scale: 1.4;
+  }
+
+  50% {
+    scale: 2;
+  }
+
+  75% {
+    scale: 1.6;
+  }
+
+  100% {
+    scale: 2;
   }
 }
 
