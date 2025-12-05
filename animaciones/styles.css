@@ -24,7 +24,19 @@
   Es importante especificar la duración de la animación correctamente.
   Sin ella, la animación no se ejecutará como deseas.
 
+  ⚙️ ¿Qué es animation-fill-mode?
+  Por defecto, después de que una animación se completa, los elementos vuelven
+  a su estado inicial. Esto puede resultar en un comportamiento inesperado. La
+  propiedad animation-fill-mode permite que el elemento mantenga su estilo tras
+  finalizar la animación.
 
+  Tipos de animation-fill-mode
+  - none: El valor predeterminado, donde el elemento no mantiene ningún cambio.
+  - forwards: Mantiene el estilo del keyframe final una vez que termina la animación.
+  - backwards: Aplica el keyframe inicial cuando la animación comienza y el
+  elemento se ve afectado inmediatamente antes de la animación.
+  both: Combina ambos comportamientos, mostrando el keyframe inicial al
+  comenzar y el keyframe final al finalizar.
 */
 
 .pulser {
@@ -87,9 +99,10 @@ img {
   width: 80px;
   animation: mover;
   animation-duration: 2s;
-  animation-iteration-count: infinite;
+  /* animation-iteration-count: infinite; */
   animation-timing-function: linear;
   animation-direction: alternate;
+  animation-fill-mode: both;
 }
 
 img {
