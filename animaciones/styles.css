@@ -42,6 +42,17 @@
   ⚙️ Consideraciones de Rendimiento
   Las animaciones CSS son eficientes porque se ejecutan en GPU, lo que reduce el
   impacto en el rendimiento en comparación con las animaciones basadas en JavaScript.
+
+  Notas de rendimiento:
+  1. Las propiedades width, height, margin y padding causan que cambie el layout
+  y esto genera reflow costoso afectando negativamente el rendimiento.
+  2. Las propiedades transform y opacity solo requieren repaint por lo que
+  evitan reflow y se manejan eficientemente meorando el rendimiento de las
+  animaciones CSS.
+
+  will-change:
+  Es una declaración que informa al navegador qué propiedades van a cambiar para optimizar
+  antes de la animación.
 */
 
 .pulser {
