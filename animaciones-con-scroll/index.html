@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación con Scroll</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 16px;
+        }
+        .barra-progreso {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1rem;
+            background-color: red;
+            /* En el tiempo de la animación debemos
+            asignarle el valor auto debido a que la duración va a depender
+            del scroll (no depende del tiempo) */
+            animation: progressGrow auto linear;
+            /* Escuchar el scroll
+              Le debemos pasar 2 argumentos:
+              1. De cuál elemento queremos escuchar el scroll. Podemos escuchar
+              el scroll de la ventana (root) o de cualquier elemento HTML contenedor.
+              2. (opcional) Indicamos qué scroll queremos escuchar: vertical (block)
+              u horizontal (inline, es el valor por defecto.
+            */
+            animation-timeline: scroll(root block);
+        }
+        @keyframes progressGrow {
+            from { width: 0%; } /* Si el scroll es 0 vamos a estar en el from del keyframe */
+            to { width: 100%; } /* Cuando terminamos de hacer scroll en toda la página vamos a estar en el to o 100% de la animación */
+        }
+    </style>
+</head>
+<body>
+    <div class="barra-progreso"></div>
+    <header>
+        <h1>Spider-Man y su trabajo en la ciudad de Nueva York</h1>
+        <p>El héroe amigable del vecindario y su compromiso con la ciudad</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Introducción a Spider-Man</h2>
+            <p>
+                Spider-Man es uno de los superhéroes más icónicos del mundo y está profundamente
+                ligado a la ciudad de Nueva York. A diferencia de otros héroes que protegen el planeta
+                entero o incluso el universo, Spider-Man se caracteriza por su enfoque local, cercano
+                y humano. Su trabajo se centra en proteger a los ciudadanos comunes y mantener el orden
+                en las calles, edificios y barrios de la ciudad.
+            </p>
+            <p>
+                Bajo la máscara se encuentra Peter Parker, un joven que intenta equilibrar su vida
+                personal con la enorme responsabilidad que implica tener poderes extraordinarios.
+                Nueva York no es solo el escenario de sus hazañas, sino también su hogar, su lugar de
+                trabajo y el espacio donde enfrenta sus mayores desafíos.
+            </p>
+        </section>
+
+        <section>
+            <h2>Nueva York como su oficina principal</h2>
+            <p>
+                Para Spider-Man, la ciudad de Nueva York funciona como una gran oficina al aire libre.
+                Los rascacielos, los callejones, los puentes y el metro se convierten en herramientas
+                clave para su labor diaria. Gracias a su habilidad para balancearse con telarañas,
+                puede desplazarse rápidamente de un punto a otro, lo que le permite responder con
+                rapidez a emergencias.
+            </p>
+            <p>
+                Cada barrio presenta retos distintos: desde pequeños delitos en zonas residenciales
+                hasta amenazas mayores en áreas financieras o industriales. Spider-Man conoce bien
+                la ciudad y utiliza ese conocimiento para anticiparse a los problemas y actuar de
+                manera eficiente.
+            </p>
+        </section>
+
+        <section>
+            <h2>El trabajo diario de un héroe urbano</h2>
+            <h3>Combate contra el crimen</h3>
+            <p>
+                Una de las principales responsabilidades de Spider-Man es enfrentar el crimen.
+                Ladrones, mafias y supervillanos forman parte de su jornada laboral. A diferencia de
+                la policía, Spider-Man actúa de forma independiente, guiado por su propio sentido
+                moral y su deseo de proteger a los inocentes.
+            </p>
+
+            <h3>Rescate y ayuda ciudadana</h3>
+            <p>
+                El trabajo de Spider-Man no se limita a pelear. También rescata personas en peligro,
+                ayuda durante accidentes y colabora en situaciones de emergencia como incendios o
+                derrumbes. Muchas veces, su labor consiste simplemente en estar presente y brindar
+                apoyo cuando más se necesita.
+            </p>
+        </section>
+
+        <section>
+            <h2>La relación con los ciudadanos de Nueva York</h2>
+            <p>
+                Spider-Man mantiene una relación compleja con los habitantes de la ciudad. Para
+                muchos es un héroe inspirador, un símbolo de esperanza y valentía. Para otros,
+                especialmente algunos medios de comunicación, es una figura polémica que actúa
+                fuera de la ley.
+            </p>
+            <p>
+                A pesar de las críticas, Spider-Man continúa trabajando por el bienestar de la
+                ciudad. Su compromiso no depende del reconocimiento, sino de su convicción de que
+                con un gran poder viene una gran responsabilidad.
+            </p>
+        </section>
+
+        <section>
+            <h2>Equilibrio entre la vida personal y el deber</h2>
+            <p>
+                Uno de los mayores desafíos en el trabajo de Spider-Man es mantener un equilibrio
+                entre su vida personal y su rol como héroe. Peter Parker debe cumplir con estudios,
+                trabajo y relaciones personales, mientras responde al llamado constante de la ciudad.
+            </p>
+            <p>
+                Este conflicto hace que su historia sea especialmente humana. Spider-Man no es
+                perfecto, comete errores y enfrenta consecuencias, pero siempre intenta aprender
+                de ellas y seguir adelante.
+            </p>
+        </section>
+
+        <section>
+            <h2>El impacto de Spider-Man en Nueva York</h2>
+            <p>
+                A lo largo del tiempo, Spider-Man ha dejado una huella profunda en Nueva York.
+                Su presencia ha salvado innumerables vidas y ha evitado catástrofes que podrían
+                haber cambiado el destino de la ciudad.
+            </p>
+            <p>
+                Más allá de sus actos heroicos, Spider-Man representa la idea de que cualquier
+                persona común puede marcar la diferencia. Su trabajo en Nueva York no solo
+                protege edificios y calles, sino también los valores de solidaridad, justicia
+                y responsabilidad.
+            </p>
+        </section>
+
+        <section>
+            <h2>Conclusión</h2>
+            <p>
+                Spider-Man no es solo un superhéroe, es un trabajador incansable de la ciudad de
+                Nueva York. Su labor diaria, llena de sacrificios y decisiones difíciles, demuestra
+                que el verdadero heroísmo se encuentra en ayudar a los demás, incluso cuando nadie
+                está mirando.
+            </p>
+            <p>
+                En cada telaraña lanzada y en cada rescate realizado, Spider-Man reafirma su
+                compromiso con la ciudad que lo vio crecer y que continúa necesitando de su
+                protección.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Historia de Spider-Man en Nueva York</p>
+    </footer>
+</body>
+</html>
