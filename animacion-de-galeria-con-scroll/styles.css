@@ -27,4 +27,23 @@ h1 {
   position: sticky;
   top: 0;
   background: rgba(0, 0, 0, 0.7);
+
+  animation: enhance-header linear both;
+  animation-timeline: scroll(root block);
+  /* Si la página es muy alta y por lo tanto se demora mucho
+  en llegar hasta el final del scroll y de la animación podemos
+  usar la propiedad animation-range para crear un rango para la animación
+  para hacerla más rápída. El primer valor es el eje inline y el segundo
+  el eje block. En este caso queremos que la animación de scroll
+  termine cuando el scroll alcance 200px en el eje block (vertical): */
+  animation-range: 0 200px;
+}
+
+@keyframes enhance-header {
+  to {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    font-size: 18px;
+    color: black;
+  }
 }
