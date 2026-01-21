@@ -2,6 +2,7 @@ body {
   background-color: black;
   margin: 0;
   font-family: system-ui;
+  padding-bottom: 100px;
 }
 
 section {
@@ -16,6 +17,24 @@ section img {
   width: 100%;
   height: auto;
   margin-bottom: 16px;
+
+  animation: reveal linear both;
+  /* view nos permite que se dipare la animación
+  solo cuando los elementos son visibles y cada elemento
+  disparará su propia animación, es decir, cada elemento tiene su propia
+  animación la cual se disparará cuando el elemento sea visible en el viewpor.
+  Scroll se basaba en el scroll del navegador sin importar si algún elemento
+  de interés era visible, con view dejamos de pensar en el scroll
+  para animar y solo nos basamos en si el elemento es visible en el viewport. */
+  animation-timeline: view();
+  /* Al igual que con el scroll podemos definir un rango para manipular
+  el rango en el que queremos que la animación inicie y se termine.
+  En este caso queremos que el inicio de la animación sea cuando la imagen
+  haya entrado un 20% en el viewport, es decir, cuando haya un 20% en el viewport
+  del elemento empieza la animación; y el final de la animación va a ser 
+  cuando estemos cubriendo en el viewport un 30% de ese elemento, es decir, cuando
+  haya entrado un 30% de la imagen en el viewport: */
+  animation-range: entry 20% cover 30%;
 }
 
 h1 {
@@ -25,6 +44,7 @@ h1 {
   padding: 16px;
   margin: 0;
   position: sticky;
+  z-index: 1;
   top: 0;
   background: rgba(0, 0, 0, 0.7);
 
@@ -37,6 +57,20 @@ h1 {
   el eje block. En este caso queremos que la animación de scroll
   termine cuando el scroll alcance 200px en el eje block (vertical): */
   animation-range: 0 200px;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    translate: 0 100px;
+    scale: 0.5;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
 }
 
 @keyframes enhance-header {
